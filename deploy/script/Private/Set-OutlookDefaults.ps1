@@ -1,0 +1,1 @@
+﻿[Reflection.Assembly]::LoadFrom("$PSScriptRoot\..\Microsoft.Office.Interop.Outlook.dll")
