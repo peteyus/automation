@@ -8,6 +8,11 @@ Function Set-PrinterConfigurationXml
         [string] $InputPath
     )
 
+    if (-not (Get-IsAdmin)) {
+        Write-Error "This command must be executed as administrator."
+        Return
+    }
+
     $printer = Get-Printer -Name $printerName -ErrorAction SilentlyContinue
     if (-not ($printer)) {
         Write-Error "Printer $printerName is not installed."
