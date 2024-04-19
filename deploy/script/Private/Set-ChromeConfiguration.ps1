@@ -7,10 +7,13 @@ Function Set-ChromeConfiguration
 
     $prefpath = "$env:LocalAppData\\Google\\Chrome\\User Data\\Default\\Preferences"
     $cprefs = Get-Content $prefpath | ConvertFrom-Json
+    if ($null -eq $cprefs.bookmark_bar)
+    {
+        $cprefs | Add-Member -MemberType NoteProperty -Name bookmark_bar -Value @{ show_on_all_tabs = $true }
+    }
+    if ($null -eq $cprefs.bookmark_bar.show_on_all_tabs) {
+        $cprefs.bookmark_bar | Add-Member -MemberType NoteProperty -Name show_on_all_tabs -Value $true
+    }
     $cprefs.bookmark_bar.show_on_all_tabs = $true
     ConvertTo-Json $cprefs | Out-File $prefpath
-
-    if (Test-Path $chromePath) {
-        Add-TaskbarPin -Target $chromePath
-    }
 }

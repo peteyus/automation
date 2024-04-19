@@ -9,6 +9,7 @@
     Author = 'Peter Jorgensen'
     Description = 'Module for automating deployment of computers. Specifically at Focus Engineering but future versions may be more configuration based.'
     PowerShellVersion = '3.0' #Not sure I'm using any specific features but let's get past old versions.
+    RequiredModules = @()
     RequiredAssemblies = @('Microsoft.Office.Interop.Excel.dll', 'Microsoft.Office.Interop.Word.dll', 'Microsoft.Office.Interop.Outlook.dll' )
     FunctionsToExport = '*'
 }
