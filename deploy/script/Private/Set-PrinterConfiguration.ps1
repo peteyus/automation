@@ -2,13 +2,13 @@
 Function Set-PrinterConfiguration{
     Param(
         [Parameter(Mandatory=$true)]
-        [string] $portName
+        [string] $portName,
         [Parameter(Mandatory=$true)]
-        [string] $portAddress
+        [string] $portAddress,
         [Parameter(Mandatory=$true)]
-        [string] $printerName
+        [string] $printerName,
         [Parameter(Mandatory=$true)]
-        [string] $printerDriverName
+        [string] $printerDriverName,
         [Parameter(Mandatory=$true)]
         [string] $printerDriverPath
     )

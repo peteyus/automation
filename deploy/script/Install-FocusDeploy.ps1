@@ -1,3 +1,3 @@
-﻿Import-Module ".\Focus-Deploy.psm1"
+﻿Import-Module ".\Focus-Deploy.psm1" -Force
 Write-Output "Commands available in this module:"
 Get-Command -Module Focus-Deploy | Foreach-Object { Write-Output $_.Name }
