@@ -2,4 +2,5 @@
 {
     Set-WordDefaults
     Set-ExcelDefaults
+    Set-OutlookDefaults
 }

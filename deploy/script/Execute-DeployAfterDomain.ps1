@@ -1,10 +1,9 @@
 ﻿# This script assumes you have imported the module, and you've joined to the domain and are ready to set the user's profile up.
 Add-Font
-Set-Browsers # TODO - Not done
+Set-Browsers
 Set-Office
 Set-Printers
 # Download and Install Microsoft Teams
-# Pin Chrome, Excel, Outlook and Word to the Task Bar
 # Install BlueBeam PDF Software from \\fes-server21\IT(Private)\BlueBeam\ BbRevu20.2.60.exe Serial Number: 1711890 Product Key: UYCX9-3EI06WA
 # For Field Team load Adobe Acrobat Reader
 # Install Google Earth Pro on any AutoCAD computer
