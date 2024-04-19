@@ -2,8 +2,12 @@
 Add-Font
 Set-Browsers
 Set-Office
-Set-Printers
+Set-Printers #TODO PRJ: this one
+Set-WindowsConfiguration # Remove W11 custom right click
+
 # Download and Install Microsoft Teams
+Start-Process ".\teamsbootstrapper.exe"
+
 # Install BlueBeam PDF Software from \\fes-server21\IT(Private)\BlueBeam\ BbRevu20.2.60.exe Serial Number: 1711890 Product Key: UYCX9-3EI06WA
 # For Field Team load Adobe Acrobat Reader
 # Install Google Earth Pro on any AutoCAD computer
