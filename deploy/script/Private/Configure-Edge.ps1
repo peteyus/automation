@@ -1,0 +1,4 @@
+﻿Function Configure-Edge
+{
+
+}
