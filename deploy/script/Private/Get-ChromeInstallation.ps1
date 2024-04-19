@@ -9,7 +9,7 @@ function Get-ChromeInstallation {
     )
 
     foreach ($path in $paths) {
-        $items = Get-ItemProperty $path
+        $items = Get-ItemProperty $path -ErrorAction SilentlyContinue
         foreach ($item in $items) {
             if ($item.DisplayName -like "*Google Chrome*") {
                 return $item.InstallLocation;

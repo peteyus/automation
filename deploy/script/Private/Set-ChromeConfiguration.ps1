@@ -16,4 +16,13 @@ Function Set-ChromeConfiguration
     }
     $cprefs.bookmark_bar.show_on_all_tabs = $true
     ConvertTo-Json $cprefs | Out-File $prefpath
+
+    Write-Output "Launching Default Apps window for setting default browser"
+    Set-DefaultBrowser
+
+    if (Test-Path $chromePath) 
+    {
+        Write-Output "Launching Chrome window for easy pinning to taskbar"
+        Start-Process -FilePath $chromePath
+    }
 }
