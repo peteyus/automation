@@ -2,7 +2,7 @@
 Add-Font
 Set-Browsers
 Set-Office
-Set-Printers #TODO PRJ: this one
+#Set-Printers #TODO PRJ: this one
 Set-WindowsConfiguration # Remove W11 custom right click
 
 # Download and Install Microsoft Teams
