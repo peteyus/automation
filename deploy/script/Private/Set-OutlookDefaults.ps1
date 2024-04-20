@@ -2,7 +2,7 @@
 
 Function Set-OutlookDefaults
 {
-    Write-Output "Launching Outlook for configuration and pinning to taskbar"
-    $outlook = New-Object Microsoft.Office.Interop.Outlook.ApplicationClass
-    $outlook.Visible = $true
+    # Write-Output "Launching Outlook for configuration and pinning to taskbar"
+    # $outlook = New-Object Microsoft.Office.Interop.Outlook.ApplicationClass
+    # $outlook.Visible = $true
 }

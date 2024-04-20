@@ -20,8 +20,8 @@ Function Set-WordDefaults
     $templateDoc.SaveAs($template.Path, 14) # 14 is WdSaveFormat.wdFormatXMLTemplate
     $templateDoc.Close($false)
 
-    If (Test-Path "W:\\FOCUS Templates") {
-        $word.Options.DefaultFilePath.InvokeSet("W:\\FOCUS Templates", @( 3 )) # 3 is WdDefaultFilePath.wdWorkgroupTemplatesPath
+    If (Test-Path "\\fes-server21\IT(Public)\FOCUS Templates") {
+        $word.Options.DefaultFilePath.InvokeSet("\\fes-server21\IT(Public)\FOCUS Templates", @( 3 )) # 3 is WdDefaultFilePath.wdWorkgroupTemplatesPath
     }
     
     Write-Output "Opening Word window to pin to the taskbar"

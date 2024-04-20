@@ -6,4 +6,8 @@
     Write-Output "Installing Chrome, please wait..."
     Start-Process -FilePath $Path$Installer -Args "/silent /install" -Verb RunAs -Wait; 
     Remove-Item $Path$Installer
+
+    $chromePath = "$(Get-ChromeInstallation)\\chrome.exe"
+    Write-Output "Launching Chrome to initialize settings."
+    Start-Process -FilePath $chromePath -Wait
 }

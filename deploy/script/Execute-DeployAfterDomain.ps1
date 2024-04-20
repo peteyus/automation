@@ -38,10 +38,10 @@ if (Get-Confirmation -Prompt "Install BlueBeam PDF? [y/n]")
     Start-Process -FilePath "\\fes-server21\IT(Private)\BlueBeam\BbRevu20.2.60.exe" -RunAs -Wait
 }
 
-# If user has a phone extension, Install TUSK Presence from W:\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi 192.168.10.10
+# If user has a phone extension, Install TUSK Presence from \\fes-server21\IT(Public)\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi 192.168.10.10
 if (Get-Confirmation -Prompt "Install TUSK Presence? [y/n]")
 {
-    Start-Process -FilePath "W:\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Public)\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi" -RunAs -Wait
 }
 
 # Install Google Earth Pro on any AutoCAD computer
@@ -54,10 +54,10 @@ if (Get-Confirmation -Prompt "Install Google Earth Pro? [y/n]")
 # ThreatLocker Installed
 if (Get-Confirmation -Prompt "Install Threatlocker? [y/n]")
 {
-    Start-Process -FilePath "W:\ThreatLocker\07-05-2023\ThreatlockerStubX64_mi7a11d5asvh6vjwq8nlfoz7_B.exe" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Public)\ThreatLocker\07-05-2023\ThreatlockerStubX64_mi7a11d5asvh6vjwq8nlfoz7_B.exe" -RunAs -Wait
 }
 
-# AutoCAD Installed - o	W:\Civil 3D Shared\Installation 
+# AutoCAD Installed - o	\\fes-server21\IT(Public)\Civil 3D Shared\Installation 
 #   Everyone except for Structural get Civil 3D
 #   Structural Gets AutoCAD and Revit
 #   CAD Services also gets Revit
@@ -81,7 +81,7 @@ if (Get-Confirmation -Prompt "Install Forticlient VPN? [y/n]")
     #   Check box for Customize Port and put in 10443
     #   Select Save Login and put username in Username field.
 "@)
-    Start-Process -FilePath "W:\FortiClientVPNSetup_7.0.3.0193_x64.exe" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Public)\FortiClientVPNSetup_7.0.3.0193_x64.exe" -RunAs -Wait
 }
 
 # Sophos Anti-Virus installed \\fes-server21\IT(Private)\Sophos\EPandIntXSophosSetup.exe

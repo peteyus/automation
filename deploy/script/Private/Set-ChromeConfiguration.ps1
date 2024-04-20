@@ -6,6 +6,16 @@ Function Set-ChromeConfiguration
     )
 
     $prefpath = "$env:LocalAppData\\Google\\Chrome\\User Data\\Default\\Preferences"
+    $launched = $false
+
+    if (-not (Test-Path $prefpath) -and (Test-Path $chromePath))
+    {
+        Write-Output "Preferences don't exist and chrome path provided, launching chrome to create them."
+        Start-Process -FilePath $chromePath -Wait
+        $launched = true
+    }
+
+    Write-Output "Enabling bookmarks bar on Chrome."
     $cprefs = Get-Content $prefpath | ConvertFrom-Json
     if ($null -eq $cprefs.bookmark_bar)
     {
@@ -20,7 +30,7 @@ Function Set-ChromeConfiguration
     Write-Output "Launching Default Apps window for setting default browser"
     Set-DefaultBrowser
 
-    if (Test-Path $chromePath) 
+    if ((Test-Path $chromePath) -and (-not $launched))
     {
         Write-Output "Launching Chrome window for easy pinning to taskbar"
         Start-Process -FilePath $chromePath

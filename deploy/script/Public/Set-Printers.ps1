@@ -2,13 +2,13 @@
 # Instlal instructions from https://www.pdq.com/blog/using-powershell-to-install-printers/
 Function Set-Printers {
     # HP PageWide
-    pnputil.exe /add-driver "W:\Plotters and Printers\HP Pagewide\win_x64_hpgl2_drv\hpi17nix.inf"
+    pnputil.exe /add-driver "\\fes-server21\IT(Public)\\Plotters and Printers\HP Pagewide\win_x64_hpgl2_drv\hpi17nix.inf"
     Add-PrinterDriver -Name "HP PageWide XL 5100PS MFP HPGL2"
     Add-PrinterPort -Name "IP_10.245" -PrinterHostAddress 192.168.10.245
     Add-Printer -Name "FESPageWide" -DriverName "HP PageWide XL 5100PS MFP HPGL2" -PortName "IP_10.245"
 
     # Canon
-    pnputil.exe /add-driver "W:\Plotters and Printers\Canon Printers\Generic_Plus_UFRII_v2.80_Set-up_x64\Driver\CNLB0MA64.INF" 
+    pnputil.exe /add-driver "\\fes-server21\IT(Public)\Plotters and Printers\Canon Printers\Generic_Plus_UFRII_v2.80_Set-up_x64\Driver\CNLB0MA64.INF" 
     Add-PrinterDriver -Name "Canon Generic Plus UFR II"
 
     # TODO: Get IP Addresses
