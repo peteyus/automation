@@ -12,7 +12,7 @@
 
     if (-not ($path))
     {
-        $path = "\\\\fes-server21\\IT(Private)\\Fonts\\Trajan Pro"
+        $path = "\\fes-server21\IT(Private)\Fonts\Trajan Pro"
     }
 
     $FontItem = Get-Item -Path $path
