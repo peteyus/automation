@@ -35,26 +35,33 @@ if (Get-Confirmation -Prompt "Install BlueBeam PDF? [y/n]")
 {
     Write-Output "  #   Serial Number: 1711890"
     Write-Output "  #   Product Key: UYCX9-3EI06WA"
-    Start-Process -FilePath "\\fes-server21\IT(Private)\BlueBeam\BbRevu20.2.60.exe" -RunAs -Wait
+    
+    $path = $env:TEMP
+    $executable = "BbRevu20.2.90.exe"
+    $installer = "\\fes-server21\IT(Private)\BlueBeam\$executable"
+    Copy-Item $installer -Destination $path$executable
+    Start-Process -FilePath $path$executable -Wait
+    Remove-Item $path$executable
 }
 
 # If user has a phone extension, Install TUSK Presence from \\fes-server21\IT(Public)\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi 192.168.10.10
 if (Get-Confirmation -Prompt "Install TUSK Presence? [y/n]")
 {
-    Start-Process -FilePath "\\fes-server21\IT(Public)\Tusk\1.4 Setup March 2019\TUSKPresenceSetup.msi" -RunAs -Wait
+    Write-Output "After install, launch TUSK and set the IP address to 192.168.10.10, and configure extension"
+    Start-Process -FilePath "\\fes-server21\IT(Public)\Tusk\2023 Update\TUSKPresenceSetup.msi" -Wait
 }
 
 # Install Google Earth Pro on any AutoCAD computer
 if (Get-Confirmation -Prompt "Install Google Earth Pro? [y/n]")
 {
-    Start-Process -FilePath "\\fes-server21\IT(Private)\Google Earth\GoogleEarthProSetup.exe" -RunAs -Wait
+    Start-Process -FilePath "$PSScriptRoot\GoogleEarthProSetup.exe" -Wait
 }
 
 # Huntress Agent Installed
 # ThreatLocker Installed
 if (Get-Confirmation -Prompt "Install Threatlocker? [y/n]")
 {
-    Start-Process -FilePath "\\fes-server21\IT(Public)\ThreatLocker\07-05-2023\ThreatlockerStubX64_mi7a11d5asvh6vjwq8nlfoz7_B.exe" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Public)\ThreatLocker\07-05-2023\ThreatlockerStubX64_mi7a11d5asvh6vjwq8nlfoz7_B.exe" -Wait
 }
 
 # AutoCAD Installed - o	\\fes-server21\IT(Public)\Civil 3D Shared\Installation 
@@ -81,11 +88,16 @@ if (Get-Confirmation -Prompt "Install Forticlient VPN? [y/n]")
     #   Check box for Customize Port and put in 10443
     #   Select Save Login and put username in Username field.
 "@)
-    Start-Process -FilePath "\\fes-server21\IT(Public)\FortiClientVPNSetup_7.0.3.0193_x64.exe" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Public)\FortiClientVPNSetup_7.0.3.0193_x64.exe" -Wait
 }
 
 # Sophos Anti-Virus installed \\fes-server21\IT(Private)\Sophos\EPandIntXSophosSetup.exe
 if (Get-Confirmation -Prompt "Install Sophos? [y/n]")
 {
-    Start-Process -FilePath "\\fes-server21\IT(Private)\Sophos\EPandIntXSophosSetup.exe" -RunAs -Wait
+    Start-Process -FilePath "\\fes-server21\IT(Private)\Sophos\EPandIntXSophosSetup.exe" -Wait
 }
+
+Write-Output "The following steps of the installation were not run:"
+Write-Output "# Outlook Profile setup"
+Write-Output "# AutoCAD"
+Write-Output "# Structural and Traffic specific applications"

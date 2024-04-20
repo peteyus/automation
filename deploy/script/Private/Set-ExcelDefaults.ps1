@@ -8,5 +8,6 @@ Function Set-ExcelDefaults
     $excel.StandardFont = "Century Gothic";
     $excel.StandardFontSize = 11;
 
-    $excel.Quit();
+    Write-Output "Launching Excel to pin to Taskbar."
+    $excel.Visible = $true
 }

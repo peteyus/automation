@@ -62,6 +62,8 @@
         $bookmarks | ConvertTo-Json -Depth 4 | Set-Content $bmpath
     }
 
+    # Disable edge copilot and sidebar
+
     if (Test-Path $edgePath) {
         Write-Output "Launching Edge for easy pinning to taskbar"
         Start-Process -FilePath $edgePath
