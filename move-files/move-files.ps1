@@ -34,7 +34,7 @@ function Move-Files {
         # Check all files in $subdirectory. If older than $targetDate, move the file and leave the new path in a file inside the directory
         # Get-ChildItem can be passed `-Filter *.jpg` to limit by filename as well.
         Get-ChildItem -Path $subdirectory -File |
-            Where-Object CreationTime -GT $targetDate |
+            Where-Object CreationTime -LT $targetDate |
             ForEach-Object -Begin {
                 # these commands run once per directory before the -Process block below
                 $filesMoved = @() # Re-initialize files list for current directory
